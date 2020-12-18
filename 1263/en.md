@@ -6,8 +6,8 @@ Now based on the information given, we have to find whether they can redistribut
 
 First, observe that we can represent this problem using graph. Each relation u-v means that there is an undirected edge between node u and v. So, if we make a graph using all the relations, it will be a undirected graph with one or more connected components. Now, we can make transactions between any two node if they are in the same connected component. Consider the following graph with 2 connected components (red colored value is denoting the amount of money that node contains). <br>
 <p float="left">
-  <img src="images/Graph1.jpg"" width="400" />
-  <img src="images/Graph2.jpg" width="400" /> 
+  <img src="images/Graph1.jpg"" width="300" />
+  <img src="images/Graph2.jpg" width="300" /> 
 </p>
 
 Suppose, we want to transfer some integer amounts of money from node 1 to node 4. Say, we want to transfer 5$ from node 1 to node 4. How can we do that? We can transfer in the following order 1-->3-->4. First, we will transfer 5$ from node 1 to node 3, then we will transfer 5$ from node 3 to node 4. What does it mean? Basically it means that we can make integer transactions between any two node in the same connected component. We can't make any transaction between node 1 and node 7, as they are in the different connected component. <br>
