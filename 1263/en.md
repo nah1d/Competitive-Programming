@@ -5,30 +5,10 @@ Now based on the information given, we have to find whether they can redistribut
 ### Solution Idea:
 
 First, observe that we can represent this problem using graph. Each relation u-v means that there is an undirected edge between node u and v. So, if we make a graph using all the relations, it will be a undirected graph with one or more connected components. Now, we can make transactions between any two node if they are in the same connected component. Consider the following graph with 2 connected components (red colored value is denoting the amount of money that node contains). <br>
-<div class="row">
-  <div class="column">
-    <img src="images/Graph1.jpg" alt="Component1" style="width:200%">
-  </div>
-  <div class="column">
-    <img src="images/Graph2.jpg" alt="Component2" style="width:200%">
-  </div>
-</div>
- <br>
-  <style> 
- * {
-     box-sizing: border-box  
- }
- .column {
-     float:left;
-     width: 33.33%;
-     padding: 5px;
- }
- .row::after {
-     content: "";
-     display: table;
-     clear: both;
- }  
- </style>
+<p float="left">
+  <img src="images/Graph1.jpg"" width="200" />
+  <img src="images/Graph2.jpg" width="200" /> 
+</p>
 
 Suppose, we want to transfer some integer amounts of money from node 1 to node 4. Say, we want to transfer 5$ from node 1 to node 4. How can we do that? We can transfer in the following order 1-->3-->4. First, we will transfer 5$ from node 1 to node 3, then we will transfer 5$ from node 3 to node 4. What does it mean? Basically it means that we can make integer transactions between any two node in the same connected component. We can't make any transaction between node 1 and node 7, as they are in the different connected component. <br>
 How can we make the money of each node in the same connected component equal? Suppose, the total number of nodes in that connected component is X and total sum of money of all the nodes in that connected component is **S**. If (S mod X !=0), there is no way we can make the money of each node in that connected component equal. Otherwise, we can always make the money of each node in that connected components equals to S/X by doing the necessary transactions between nodes. 
